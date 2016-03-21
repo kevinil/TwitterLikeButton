@@ -1,5 +1,5 @@
 //
-//  TestView.swift
+//  KevinButton.swift
 //  TwitterLikeButton
 //
 //  Created by 刘剑文 on 16/3/21.
@@ -8,7 +8,8 @@
 
 import UIKit
 
-public class TestView: UIImageView {
+public class KevinButton: UIImageView {
+
     
     var coverView : UIView!
     var uncoverView : UIView!
