@@ -10,6 +10,12 @@ import UIKit
 
 public class KevinButton: UIImageView {
 
+    public var initialImage : UIImage? {
+        didSet {
+            self.image = initialImage
+        }
+    }
+    public var selectedImage : UIImage?
     
     var coverView : UIView!
     var uncoverView : UIView!
@@ -31,7 +37,8 @@ public class KevinButton: UIImageView {
     
     override public init(frame: CGRect) {
         super.init(frame: frame)
-        self.image = UIImage(named: "unlike")
+        initialImage = UIImage(contentsOfFile: NSBundle.mainBundle().pathForResource("unlike", ofType: "png")!)
+        selectedImage = UIImage(contentsOfFile: NSBundle.mainBundle().pathForResource("like", ofType: "png")!)
         createTwoViews()
         setupGesture()
         
@@ -156,11 +163,11 @@ public class KevinButton: UIImageView {
         uncoverView.hidden = false
         coverView.hidden = false
         loopAnimation()
-        self.image = UIImage(named: "like")
+        self.image = selectedImage//UIImage(named: "like")
     }
     
     func dislike() {
-        self.image = UIImage(named: "unlike")
+        self.image = initialImage//UIImage(named: "unlike")
         self.transform = CGAffineTransformMakeScale(1.5, 1.5)
         UIView.animateWithDuration(0.15) { () -> Void in
             self.self.transform = CGAffineTransformMakeScale(1, 1)

@@ -13,7 +13,8 @@ class ShowCell: UITableViewCell {
     override func awakeFromNib() {
         super.awakeFromNib()
         let iv = KevinButton(frame: CGRectMake(30, 30, 10, 10))
-        iv.image = UIImage(named: "unlike")
+        iv.initialImage = UIImage(named: "unlike")
+        iv.selectedImage = UIImage(named: "like")
         self.contentView.addSubview(iv)
     }
 
