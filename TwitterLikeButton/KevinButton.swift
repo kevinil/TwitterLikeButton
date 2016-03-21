@@ -37,8 +37,6 @@ public class KevinButton: UIImageView {
     
     override public init(frame: CGRect) {
         super.init(frame: frame)
-        initialImage = UIImage(contentsOfFile: NSBundle.mainBundle().pathForResource("unlike", ofType: "png")!)
-        selectedImage = UIImage(contentsOfFile: NSBundle.mainBundle().pathForResource("like", ofType: "png")!)
         createTwoViews()
         setupGesture()
         
