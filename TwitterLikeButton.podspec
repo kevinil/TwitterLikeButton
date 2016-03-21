@@ -2,7 +2,7 @@
 Pod::Spec.new do |s|
 
   s.name         = "TwitterLikeButton"
-  s.version      = "1.0.1"
+  s.version      = "1.0.2"
   s.summary      = "Twitter's like button animation in Swift"
   s.description  = <<-DESC
                   Twitter's like button animation in Swift - Demo
