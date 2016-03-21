@@ -31,6 +31,7 @@ public class KevinButton: UIImageView {
     
     override public init(frame: CGRect) {
         super.init(frame: frame)
+        self.image = UIImage(named: "unlike")
         createTwoViews()
         setupGesture()
         
