@@ -74,7 +74,7 @@ public class KevinButton: UIImageView {
     }
     
     func setupGesture() {
-        tap = UITapGestureRecognizer(target: self, action: "tapDo")
+        tap = UITapGestureRecognizer(target: self, action: #selector(KevinButton.tapDo)) //"tapDo")
         self.userInteractionEnabled = true
         self.addGestureRecognizer(tap)
     }
