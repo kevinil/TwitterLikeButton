@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		C633EC3A1CABBC3E00449869 /* LikeButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = C633EC391CABBC3E00449869 /* LikeButton.swift */; };
+		C633EC3D1CABBCAA00449869 /* like.png in Resources */ = {isa = PBXBuildFile; fileRef = C633EC3B1CABBCAA00449869 /* like.png */; };
+		C633EC3E1CABBCAA00449869 /* unlike.png in Resources */ = {isa = PBXBuildFile; fileRef = C633EC3C1CABBCAA00449869 /* unlike.png */; };
 		C6CE58E81C9F9B8E00F589BD /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6CE58E71C9F9B8E00F589BD /* AppDelegate.swift */; };
 		C6CE58EA1C9F9B8E00F589BD /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6CE58E91C9F9B8E00F589BD /* ViewController.swift */; };
 		C6CE58ED1C9F9B8E00F589BD /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C6CE58EB1C9F9B8E00F589BD /* Main.storyboard */; };
@@ -16,9 +19,6 @@
 		C6CE59041C9F9CA700F589BD /* KevinButton.h in Headers */ = {isa = PBXBuildFile; fileRef = C6CE59031C9F9CA700F589BD /* KevinButton.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		C6CE59081C9F9CA800F589BD /* KevinButton.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C6CE59011C9F9CA700F589BD /* KevinButton.framework */; };
 		C6CE59091C9F9CA800F589BD /* KevinButton.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = C6CE59011C9F9CA700F589BD /* KevinButton.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
-		C6CE59131C9FBD1800F589BD /* KevinButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6CE59121C9FBD1800F589BD /* KevinButton.swift */; };
-		C6CE59161C9FC71E00F589BD /* like.png in Resources */ = {isa = PBXBuildFile; fileRef = C6CE59141C9FC71E00F589BD /* like.png */; };
-		C6CE59171C9FC71E00F589BD /* unlike.png in Resources */ = {isa = PBXBuildFile; fileRef = C6CE59151C9FC71E00F589BD /* unlike.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -46,6 +46,9 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		C633EC391CABBC3E00449869 /* LikeButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LikeButton.swift; sourceTree = "<group>"; };
+		C633EC3B1CABBCAA00449869 /* like.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = like.png; path = ../../TwitterLike/Source/like.png; sourceTree = "<group>"; };
+		C633EC3C1CABBCAA00449869 /* unlike.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = unlike.png; path = ../../TwitterLike/Source/unlike.png; sourceTree = "<group>"; };
 		C6CE58E41C9F9B8E00F589BD /* TwitterLikeButton.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TwitterLikeButton.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C6CE58E71C9F9B8E00F589BD /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		C6CE58E91C9F9B8E00F589BD /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -57,9 +60,6 @@
 		C6CE59011C9F9CA700F589BD /* KevinButton.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = KevinButton.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		C6CE59031C9F9CA700F589BD /* KevinButton.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = KevinButton.h; sourceTree = "<group>"; };
 		C6CE59051C9F9CA800F589BD /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		C6CE59121C9FBD1800F589BD /* KevinButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KevinButton.swift; sourceTree = "<group>"; };
-		C6CE59141C9FC71E00F589BD /* like.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = like.png; sourceTree = "<group>"; };
-		C6CE59151C9FC71E00F589BD /* unlike.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = unlike.png; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -102,12 +102,9 @@
 		C6CE58E61C9F9B8E00F589BD /* TwitterLikeButton */ = {
 			isa = PBXGroup;
 			children = (
-				C6CE59141C9FC71E00F589BD /* like.png */,
-				C6CE59151C9FC71E00F589BD /* unlike.png */,
 				C6CE58F91C9F9BAF00F589BD /* Files */,
 				C6CE58E91C9F9B8E00F589BD /* ViewController.swift */,
 				C6CE58FA1C9F9C1800F589BD /* ShowCell.swift */,
-				C6CE59121C9FBD1800F589BD /* KevinButton.swift */,
 				C6CE58EB1C9F9B8E00F589BD /* Main.storyboard */,
 			);
 			path = TwitterLikeButton;
@@ -127,6 +124,9 @@
 		C6CE59021C9F9CA700F589BD /* KevinButton */ = {
 			isa = PBXGroup;
 			children = (
+				C633EC3B1CABBCAA00449869 /* like.png */,
+				C633EC3C1CABBCAA00449869 /* unlike.png */,
+				C633EC391CABBC3E00449869 /* LikeButton.swift */,
 				C6CE59031C9F9CA700F589BD /* KevinButton.h */,
 				C6CE59051C9F9CA800F589BD /* Info.plist */,
 			);
@@ -190,7 +190,7 @@
 		C6CE58DC1C9F9B8E00F589BD /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastSwiftUpdateCheck = 0720;
+				LastSwiftUpdateCheck = 0730;
 				LastUpgradeCheck = 0720;
 				ORGANIZATIONNAME = kevinil;
 				TargetAttributes = {
@@ -226,8 +226,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				C6CE59161C9FC71E00F589BD /* like.png in Resources */,
-				C6CE59171C9FC71E00F589BD /* unlike.png in Resources */,
 				C6CE58F21C9F9B8E00F589BD /* LaunchScreen.storyboard in Resources */,
 				C6CE58EF1C9F9B8E00F589BD /* Assets.xcassets in Resources */,
 				C6CE58ED1C9F9B8E00F589BD /* Main.storyboard in Resources */,
@@ -238,6 +236,8 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C633EC3D1CABBCAA00449869 /* like.png in Resources */,
+				C633EC3E1CABBCAA00449869 /* unlike.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -248,7 +248,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				C6CE59131C9FBD1800F589BD /* KevinButton.swift in Sources */,
 				C6CE58FB1C9F9C1800F589BD /* ShowCell.swift in Sources */,
 				C6CE58EA1C9F9B8E00F589BD /* ViewController.swift in Sources */,
 				C6CE58E81C9F9B8E00F589BD /* AppDelegate.swift in Sources */,
@@ -259,6 +258,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C633EC3A1CABBC3E00449869 /* LikeButton.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -379,6 +379,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				EMBEDDED_CONTENT_CONTAINS_SWIFT = YES;
 				INFOPLIST_FILE = TwitterLikeButton/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.kevinil.TwitterLikeButton;
@@ -390,6 +391,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				EMBEDDED_CONTENT_CONTAINS_SWIFT = YES;
 				INFOPLIST_FILE = TwitterLikeButton/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.kevinil.TwitterLikeButton;

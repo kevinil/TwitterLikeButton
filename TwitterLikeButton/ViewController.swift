@@ -15,6 +15,7 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
     override func viewDidLoad() {
         super.viewDidLoad()
         showTableView.tableFooterView = UIView(frame: CGRectZero)
+        
     }
 
     func numberOfSectionsInTableView(tableView: UITableView) -> Int {

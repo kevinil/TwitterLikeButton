@@ -1,21 +1,23 @@
 //
-//  KevinButton.swift
+//  LikeButton.swift
 //  TwitterLikeButton
 //
-//  Created by 刘剑文 on 16/3/21.
+//  Created by 刘剑文 on 16/3/30.
 //  Copyright © 2016年 kevinil. All rights reserved.
 //
 
 import UIKit
 
-public class KevinButton: UIImageView {
+public protocol LikeButtonDelegate : NSObjectProtocol {
+    func didSelectedLikeButton(likeButton: LikeButton)
+    func didDeSelectedLikeButton(likeButton: LikeButton)
+}
 
-    public var initialImage : UIImage? {
-        didSet {
-            self.image = initialImage
-        }
-    }
-    public var selectedImage : UIImage?
+public class LikeButton: UIImageView {
+
+    public var initialImg : UIImage? { didSet { self.image = initialImg } }
+    public var selectedImg : UIImage?
+    public var delegate : LikeButtonDelegate?
     
     var coverView : UIView!
     var uncoverView : UIView!
@@ -38,16 +40,22 @@ public class KevinButton: UIImageView {
     override public init(frame: CGRect) {
         super.init(frame: frame)
         createTwoViews()
+        createColor()
+        createEight()
         setupGesture()
         
+        let bundle = NSBundle(forClass: LikeButton.self)
+        let path0 = bundle.pathForResource("unlike", ofType: "png")
+        let path1 = bundle.pathForResource("like", ofType: "png")
+        self.image = UIImage(contentsOfFile: path0!)
+        initialImg = UIImage(contentsOfFile: path0!)
+        selectedImg = UIImage(contentsOfFile: path1!)
     }
     
     required public init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
         fatalError("init(coder:) has not been implemented")
     }
-    
-    
     
     func createTwoViews() {
         width = self.bounds.width
@@ -60,7 +68,7 @@ public class KevinButton: UIImageView {
         coverView.layer.cornerRadius = coverView.bounds.width / 2
         coverView.hidden = true
         self.superview?.addSubview(coverView)
-        print("\(coverView.superview)")
+        print("super \(self.superview)")
         uncoverView = UIView(frame: coverView.frame)
         uncoverView.backgroundColor = UIColor.whiteColor()
         uncoverView.layer.cornerRadius = uncoverView.bounds.width / 2
@@ -74,16 +82,20 @@ public class KevinButton: UIImageView {
     }
     
     func setupGesture() {
-        tap = UITapGestureRecognizer(target: self, action: #selector(KevinButton.tapDo)) //"tapDo")
+        tap = UITapGestureRecognizer(target: self, action: #selector(LikeButton.tapDo))
         self.userInteractionEnabled = true
         self.addGestureRecognizer(tap)
     }
     
     func tapDo() {
-        createColor()
-        createEight()
         hasChosen = !hasChosen
-        likeAnimation()
+        if hasChosen {
+            delegate?.didSelectedLikeButton(self)
+            becomeLiked()
+        }else {
+            delegate?.didDeSelectedLikeButton(self)
+            dislike()
+        }
     }
     
     func createColor() {
@@ -151,21 +163,17 @@ public class KevinButton: UIImageView {
         return fy + height * num / 20
     }
     
-    func likeAnimation() {
-        hasChosen ? becomeLiked() : dislike()
-    }
-    
     func becomeLiked() {
         uncoverView.layer.setAffineTransform(CGAffineTransformMakeScale(0.001, 0.001))
         uncoverView.layer.cornerRadius = uncoverView.bounds.width / 2
         uncoverView.hidden = false
         coverView.hidden = false
         loopAnimation()
-        self.image = selectedImage//UIImage(named: "like")
+        self.image = selectedImg
     }
     
     func dislike() {
-        self.image = initialImage//UIImage(named: "unlike")
+        self.image = initialImg
         self.transform = CGAffineTransformMakeScale(1.5, 1.5)
         UIView.animateWithDuration(0.15) { () -> Void in
             self.self.transform = CGAffineTransformMakeScale(1, 1)
@@ -176,21 +184,21 @@ public class KevinButton: UIImageView {
         self.transform = CGAffineTransformMakeScale(0.1, 0.1)
         UIView.animateWithDuration(0.12, animations: { () -> Void in
             self.uncoverView.transform = CGAffineTransformMakeScale(1, 1)
+        }) { (finish) -> Void in
+            self.uncoverView.hidden = true
+            self.coverView.hidden = true
+            self.showColorfulBalls()
+            UIView.animateWithDuration(0.12, animations: { () -> Void in
+                self.transform = CGAffineTransformMakeScale(1.2, 1.2)
             }) { (finish) -> Void in
-                self.uncoverView.hidden = true
-                self.coverView.hidden = true
-                self.showColorfulBalls()
+                self.transform = CGAffineTransformMakeScale(1, 1)
                 UIView.animateWithDuration(0.12, animations: { () -> Void in
-                    self.transform = CGAffineTransformMakeScale(1.2, 1.2)
-                    }) { (finish) -> Void in
-                        self.transform = CGAffineTransformMakeScale(1, 1)
-                        UIView.animateWithDuration(0.12, animations: { () -> Void in
-                            
-                            }, completion: { (finish) -> Void in
-                                
-                        })
+                    
+                    }, completion: { (finish) -> Void in
                         
-                }
+                })
+                
+            }
         }
     }
     
@@ -202,45 +210,45 @@ public class KevinButton: UIImageView {
                 self.closeEight[index].alpha = 0.66
                 self.closeEight[index].transform = CGAffineTransformMakeScale(0.5, 0.5)
             }
-            }) { (finish) -> Void in
-                UIView.animateWithDuration(0.15, animations: { () -> Void in
-                    for index in 0..<7 {
-                        
-                        self.closeEight[index].alpha = 0.33
-                        self.closeEight[index].transform = CGAffineTransformMakeScale(0.2, 0.2)
-                        
-                        self.farEight[index].alpha = 0.66
-                        self.farEight[index].transform = CGAffineTransformMakeScale(0.5, 0.5)
-                    }
-                    }, completion: { (finish) -> Void in
-                        UIView.animateWithDuration(0.15, animations: { () -> Void in
-                            for index in 0..<7 {
-                                self.closeEight[index].alpha = 0
-                                self.closeEight[index].transform = CGAffineTransformMakeScale(0.01, 0.01)
-                                self.farEight[index].alpha = 0.33
-                                self.farEight[index].transform = CGAffineTransformMakeScale(0.2, 0.2)
-                            }
-                            }, completion: { (finish) -> Void in
-                                UIView.animateWithDuration(0.15, animations: { () -> Void in
+        }) { (finish) -> Void in
+            UIView.animateWithDuration(0.15, animations: { () -> Void in
+                for index in 0..<7 {
+                    
+                    self.closeEight[index].alpha = 0.33
+                    self.closeEight[index].transform = CGAffineTransformMakeScale(0.2, 0.2)
+                    
+                    self.farEight[index].alpha = 0.66
+                    self.farEight[index].transform = CGAffineTransformMakeScale(0.5, 0.5)
+                }
+                }, completion: { (finish) -> Void in
+                    UIView.animateWithDuration(0.15, animations: { () -> Void in
+                        for index in 0..<7 {
+                            self.closeEight[index].alpha = 0
+                            self.closeEight[index].transform = CGAffineTransformMakeScale(0.01, 0.01)
+                            self.farEight[index].alpha = 0.33
+                            self.farEight[index].transform = CGAffineTransformMakeScale(0.2, 0.2)
+                        }
+                        }, completion: { (finish) -> Void in
+                            UIView.animateWithDuration(0.15, animations: { () -> Void in
+                                for index in 0..<7 {
+                                    self.farEight[index].alpha = 0
+                                    self.farEight[index].transform = CGAffineTransformMakeScale(0.01, 0.01)
+                                }
+                                }, completion: { (finish) -> Void in
                                     for index in 0..<7 {
-                                        self.farEight[index].alpha = 0
-                                        self.farEight[index].transform = CGAffineTransformMakeScale(0.01, 0.01)
+                                        self.closeEight[index].removeFromSuperview()
+                                        self.closeEight[index].transform = CGAffineTransformMakeScale(1, 1)
+                                        self.closeEight[index].alpha = 1
+                                        self.farEight[index].removeFromSuperview()
+                                        self.farEight[index].transform = CGAffineTransformMakeScale(1, 1)
+                                        self.farEight[index].alpha = 1
                                     }
-                                    }, completion: { (finish) -> Void in
-                                        for index in 0..<7 {
-                                            self.closeEight[index].removeFromSuperview()
-                                            self.closeEight[index].transform = CGAffineTransformMakeScale(1, 1)
-                                            self.closeEight[index].alpha = 1
-                                            self.farEight[index].removeFromSuperview()
-                                            self.farEight[index].transform = CGAffineTransformMakeScale(1, 1)
-                                            self.farEight[index].alpha = 1
-                                        }
-                                })
-                                
-                        })
-                        
-                })
-                
+                            })
+                            
+                    })
+                    
+            })
+            
         }
     }
 

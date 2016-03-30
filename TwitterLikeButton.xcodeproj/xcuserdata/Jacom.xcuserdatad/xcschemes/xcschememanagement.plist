@@ -6,17 +6,51 @@
 	<dict>
 		<key>KevinButton.xcscheme</key>
 		<dict>
+			<key>isShown</key>
+			<true/>
 			<key>orderHint</key>
 			<integer>1</integer>
 		</dict>
 		<key>TwitterLikeButton.xcscheme</key>
 		<dict>
+			<key>isShown</key>
+			<true/>
 			<key>orderHint</key>
 			<integer>0</integer>
 		</dict>
 	</dict>
 	<key>SuppressBuildableAutocreation</key>
 	<dict>
+		<key>C633EAF11CAB664600449869</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>C633EAFE1CAB674500449869</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>C633EB091CAB681900449869</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>C633EB171CAB6D3200449869</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>C633EBA51CAB9FA700449869</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>C633EBB91CABA52900449869</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
 		<key>C6CE58E31C9F9B8E00F589BD</key>
 		<dict>
 			<key>primary</key>

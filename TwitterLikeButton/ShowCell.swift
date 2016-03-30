@@ -7,15 +7,23 @@
 //
 
 import UIKit
+import KevinButton
 
-class ShowCell: UITableViewCell {
+class ShowCell: UITableViewCell, LikeButtonDelegate {
 
     override func awakeFromNib() {
         super.awakeFromNib()
-        let iv = KevinButton(frame: CGRectMake(30, 30, 10, 10))
-        iv.initialImage = UIImage(named: "unlike")
-        iv.selectedImage = UIImage(named: "like")
+        let iv = LikeButton(frame: CGRectMake(20, 20, 20, 20))
+        iv.delegate = self
         self.contentView.addSubview(iv)
+    }
+    
+    func didSelectedLikeButton(likeButton: LikeButton) {
+        print("selected")
+    }
+    
+    func didDeSelectedLikeButton(likeButton: LikeButton) {
+        print("deSelected")
     }
 
 }
