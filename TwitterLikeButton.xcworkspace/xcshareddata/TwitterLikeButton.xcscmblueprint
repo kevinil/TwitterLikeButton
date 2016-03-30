@@ -1,0 +1,30 @@
+{
+  "DVTSourceControlWorkspaceBlueprintPrimaryRemoteRepositoryKey" : "DA09AEDA1242C7933706D20DE27913864B6297CB",
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyRepositoryLocationsKey" : {
+
+  },
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyStatesKey" : {
+    "46043F767ADD2916806F860A8DBF7693362A5BD2" : 0,
+    "DA09AEDA1242C7933706D20DE27913864B6297CB" : 0
+  },
+  "DVTSourceControlWorkspaceBlueprintIdentifierKey" : "EE769838-9263-44CF-A052-76543B422803",
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyPathsKey" : {
+    "46043F767ADD2916806F860A8DBF7693362A5BD2" : "TwitterLike\/",
+    "DA09AEDA1242C7933706D20DE27913864B6297CB" : "TwitterLikeButton\/"
+  },
+  "DVTSourceControlWorkspaceBlueprintNameKey" : "TwitterLikeButton",
+  "DVTSourceControlWorkspaceBlueprintVersion" : 204,
+  "DVTSourceControlWorkspaceBlueprintRelativePathToProjectKey" : "TwitterLikeButton.xcworkspace",
+  "DVTSourceControlWorkspaceBlueprintRemoteRepositoriesKey" : [
+    {
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "https:\/\/github.com\/kevinil\/TwitterLike.git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "46043F767ADD2916806F860A8DBF7693362A5BD2"
+    },
+    {
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "https:\/\/github.com\/kevinil\/TwitterLikeButton.git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "DA09AEDA1242C7933706D20DE27913864B6297CB"
+    }
+  ]
+}
