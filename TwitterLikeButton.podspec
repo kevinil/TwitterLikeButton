@@ -12,9 +12,8 @@ Pod::Spec.new do |s|
   s.author             = { "KeviNil" => "liulangsf@gmail.com" }
   s.platform     = :ios, "8.0"
   s.source       = { :git => "https://github.com/kevinil/TwitterLikeButton.git", :tag => s.version }
-  s.source_files  = "TwitterLikeButton/KevinButton.swift"
-  # s.resources = "TwitterLikeButton/*.png"
-  s.resource_bundles = { 'ImageBox' => 'TwitterLikeButton/*.png' }
+  s.source_files  = "KevinButton/LikeButton.swift"
+  s.resources = "KevinButton/*.png"
   s.framework  = "UIKit"
   s.requires_arc = true
 
